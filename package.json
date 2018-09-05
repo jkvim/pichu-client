@@ -1,11 +1,52 @@
 {
-  "name": "pichu-client",
+  "name": "react-playground",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Target 1. I want to play with react or other framework as fast as posible",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "NODE_ENV=production webpack-dev-server --config ./configs/webpack.config.js",
+    "build": "webpack --config ./configs/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkvim/react-playground.git"
   },
   "author": "",
-  "license": "MIT"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jkvim/react-playground/issues"
+  },
+  "homepage": "https://github.com/jkvim/react-playground#readme",
+  "dependencies": {
+    "@types/react": "^16.4.11",
+    "@types/react-dom": "^16.0.7",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "webpack": "^4.16.5",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^5.3.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.11.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.0.0-rc.13",
+    "prettier": "^1.14.2",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^4.4.2",
+    "typescript": "^3.0.1",
+    "webpack-cli": "^3.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "./scripts/pre-commit.sh",
+      "commit-msg": "./scripts/commit-msg.sh $HUSKY_GIT_PARAMS"
+    }
+  }
 }
