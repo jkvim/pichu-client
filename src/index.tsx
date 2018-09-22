@@ -1,10 +1,10 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
+import Routes from './routes'
 
-import { Login } from './app/login';
 class App extends React.Component {
   render() {
-    return <Login />
+    return <Routes />
   }
 }
 

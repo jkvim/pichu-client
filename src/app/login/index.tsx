@@ -2,7 +2,7 @@ import * as React from 'react'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 
-export class Login extends React.Component {
+export class Login extends React.Component<any> {
   state = {
     name: '',
     password: '',

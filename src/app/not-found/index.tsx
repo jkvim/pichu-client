@@ -15,11 +15,7 @@ const styles = () => ({
   }
 })
 
-export interface NotFoundProps {
-  classes: any
-}
-
-class NotFound extends React.Component<NotFoundProps> {
+class NotFound extends React.Component<any> {
   static propTypes = {
     classes: PropTypes.object,
   }
@@ -35,6 +31,5 @@ class NotFound extends React.Component<NotFoundProps> {
     );
   }
 }
-
 
 export default withStyles(styles)(NotFound)
