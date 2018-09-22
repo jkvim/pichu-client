@@ -8,7 +8,7 @@ const getPath = (filePath) => path.resolve(ROOT_PATH, filePath)
 
 module.exports = {
   mode: NODE_ENV === 'production' ? 'production' : 'development',
-  devtool: 'inline-source-map',
+  // devtool: 'inline-source-map',
   entry: getPath('./src/index.tsx'),
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
@@ -27,4 +27,9 @@ module.exports = {
       template: getPath('./index.html'),
     }),
   ],
+  // for skip warning
+  performance: {
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  }
 }

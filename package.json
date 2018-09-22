@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/jkvim/react-playground#readme",
   "dependencies": {
+    "@material-ui/core": "^3.1.0",
+    "@material-ui/icons": "^3.0.1",
+    "@reach/router": "^1.2.0",
     "@types/react": "^16.4.11",
     "@types/react-dom": "^16.0.7",
     "react": "^16.4.2",
