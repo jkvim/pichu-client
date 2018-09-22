@@ -71,6 +71,10 @@
     react-lifecycles-compat "^3.0.4"
     warning "^3.0.0"
 
+"@types/history@*":
+  version "4.7.0"
+  resolved "http://registry.npm.taobao.org/@types/history/download/@types/history-4.7.0.tgz#2fac51050c68f7d6f96c5aafc631132522f4aa3f"
+
 "@types/jss@^9.5.3":
   version "9.5.6"
   resolved "http://registry.npm.taobao.org/@types/jss/download/@types/jss-9.5.6.tgz#96e1d246ddfbccc4867494077c714773cf29acde"
@@ -86,6 +90,13 @@
   version "15.5.5"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.5.tgz#17038dd322c2325f5da650a94d5f9974943625e3"
   dependencies:
+    "@types/react" "*"
+
+"@types/reach__router@^1.0.1":
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/@types/reach__router/download/@types/reach__router-1.0.1.tgz#f927a0c6ae198e032b5990196c2b7606a9fb14a1"
+  dependencies:
+    "@types/history" "*"
     "@types/react" "*"
 
 "@types/react-dom@^16.0.7":
