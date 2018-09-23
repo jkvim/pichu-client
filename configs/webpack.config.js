@@ -11,6 +11,9 @@ module.exports = {
   // devtool: 'inline-source-map',
   entry: getPath('./src/index.tsx'),
   resolve: {
+    alias: {
+      components: getPath('src/components/'),
+    },
     extensions: ['.ts', '.tsx', '.js', '.json'],
   },
   module: {
