@@ -41,7 +41,7 @@ class NavBar extends React.Component<any> {
               color="inherit"
               className={classes.grow}
             >
-              News
+              Pichu
             </Typography>
             <Button color="inherit">
               <Link to="/login">Login</Link>

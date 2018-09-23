@@ -1,9 +1,12 @@
 import * as React from 'react'
+import NavBar from 'components/navbar'
 
 export default class Home extends React.Component<any> {
   render() {
     return (
-      <div>Home</div>
+      <div>
+        <NavBar />
+      </div>
     )
   }
-};
+}
