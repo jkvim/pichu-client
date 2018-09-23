@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=production webpack-dev-server --config ./configs/webpack.config.js",
-    "build": "webpack --config ./configs/webpack.config.js"
+    "build": "webpack --config ./configs/webpack.config.js",
+    "g": "plop"
   },
   "repository": {
     "type": "git",
@@ -41,6 +42,7 @@
     "eslint-plugin-react": "^7.11.0",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^1.0.0-rc.13",
+    "plop": "^2.1.0",
     "prettier": "^1.14.2",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^4.4.2",
