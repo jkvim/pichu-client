@@ -1,35 +1,33 @@
 import * as React from "react";
-import * as PropTypes from 'prop-types';
+import * as PropTypes from "prop-types";
 import Paper from "@material-ui/core/Paper";
-import Typography from '@material-ui/core/Typography'
+import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
+import NavBar from "components/navbar";
 
 const styles = () => ({
   container: {
-    width: '100%',
-    height: '100%',
-    display: 'flex',
-    alignItem: 'center',
-    justifyContent: 'center',
-    background: 'green'
+    width: "100%",
+    height: "100%",
+    display: "block",
+    background: "green"
   }
-})
+});
 
 class NotFound extends React.Component<any> {
   static propTypes = {
-    classes: PropTypes.object,
-  }
+    classes: PropTypes.object
+  };
 
   render() {
-    const { classes } = this.props
+    const { classes } = this.props;
     return (
-     <div className={classes.container}>
-        <Paper>
-          <Typography component="h3">NOT FOUND</Typography>
-        </Paper>
-     </div>
+      <div className={classes.container}>
+        <NavBar />
+        <h1>NOT FOUND</h1>
+      </div>
     );
   }
 }
 
-export default withStyles(styles)(NotFound)
+export default withStyles(styles)(NotFound);
