@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -52,4 +51,5 @@ class NavBar extends React.Component<any> {
     )
   }
 }
+
 export default withStyles(styles)(NavBar)
