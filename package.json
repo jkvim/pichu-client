@@ -44,6 +44,7 @@
     "prettier": "^1.14.2",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^4.4.2",
+    "tslint-config-prettier": "^1.15.0",
     "typescript": "^3.0.1",
     "webpack-cli": "^3.1.0"
   },
