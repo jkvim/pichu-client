@@ -69,17 +69,7 @@ class HomeTab extends React.Component<any, any> {
           <Tab
             disableRipple
             classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-            label={HomeTabs.UNREAD}
-          />
-          <Tab
-            disableRipple
-            classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-            label={HomeTabs.RECENT}
-          />
-          <Tab
-            disableRipple
-            classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-            label={HomeTabs.CATEGORY}
+            label={HomeTabs.HOT}
           />
         </Tabs>
       </div>
