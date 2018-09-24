@@ -9,6 +9,11 @@ const getPath = (filePath) => path.resolve(ROOT_PATH, filePath)
 module.exports = {
   mode: NODE_ENV === 'production' ? 'production' : 'development',
   // devtool: 'inline-source-map',
+  output: {
+    path: getPath('build'),
+    filename: '[name].js',
+    publicPath: '/',
+  },
   entry: getPath('./src/index.tsx'),
   resolve: {
     alias: {
@@ -37,6 +42,6 @@ module.exports = {
     maxAssetSize: 512000
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
   }
 }
