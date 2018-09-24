@@ -11,7 +11,6 @@ export default class Home extends React.Component<any> {
       <div>
         <NavBar />
         <PichuContent>
-          <CategoryDropDown />
           <HomeTab />
           <SessionList />
         </PichuContent>
