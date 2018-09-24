@@ -13,6 +13,7 @@ module.exports = {
   resolve: {
     alias: {
       components: getPath('src/components/'),
+      constants: getPath('src/constants/')
     },
     extensions: ['.ts', '.tsx', '.js', '.json'],
   },
