@@ -1,16 +1,23 @@
 import * as React from 'react'
 import NavBar from 'components/navbar'
 import PichuContent from 'components/pichu-content'
-import CategoryDropDown from 'components/category-dropdown'
 import HomeTab from 'components/home-tab'
 import SessionList from 'components/session-list'
+import { withStyles, createStyles, Theme } from '@material-ui/core/styles'
 
-export default class Home extends React.Component<any> {
+const styles = (theme: Theme) => createStyles({
+  content: {
+    marginTop: 20,
+  },
+})
+
+class Home extends React.Component<any> {
   render() {
+    const { classes } = this.props
     return (
       <div>
         <NavBar />
-        <PichuContent>
+        <PichuContent classProps={classes.content}>
           <HomeTab />
           <SessionList />
         </PichuContent>
@@ -18,3 +25,5 @@ export default class Home extends React.Component<any> {
     )
   }
 }
+
+export default withStyles(styles)(Home)
