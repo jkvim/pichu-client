@@ -1,6 +1,7 @@
 import * as React from 'react'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
+import NavBar from 'components/navbar'
 
 export default class Login extends React.Component<any> {
   state = {
@@ -16,21 +17,24 @@ export default class Login extends React.Component<any> {
 
   render() {
     return (
-      <form>
-        <TextField
-          id="username"
-          label="用户名"
-          value={this.state.name}
-          onChange={this.handleChange('name')}
-        />
-        <TextField
-          id="password"
-          label="用户名"
-          value={this.state.password}
-          onChange={this.handleChange('password')}
-        />
-        <Button color="default">Login</Button>
-      </form>
+      <div>
+        <NavBar />
+        <form>
+          <TextField
+            id="username"
+            label="用户名"
+            value={this.state.name}
+            onChange={this.handleChange('name')}
+          />
+          <TextField
+            id="password"
+            label="用户名"
+            value={this.state.password}
+            onChange={this.handleChange('password')}
+          />
+          <Button color="default">Login</Button>
+        </form>
+      </div>
     )
   }
 }
