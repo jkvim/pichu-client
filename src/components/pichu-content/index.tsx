@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { withStyles } from '@material-ui/core/styles'
+import classnames from 'classnames'
 
 const PADDING = '150px'
 
@@ -15,9 +16,9 @@ const styles = {
 
 class PichuContent extends React.Component<any> {
   render() {
-    const { classes } = this.props
+    const { classes, classProps } = this.props
     return (
-      <div className={classes.container}>
+      <div className={classnames(classes.container, classProps)}>
         {this.props.children}
       </div>
     )

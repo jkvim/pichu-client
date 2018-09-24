@@ -1,5 +1,6 @@
 import * as React from 'react'
 import NavBar from 'components/navbar'
+import UserHeader from 'components/user-header'
 
 export default class User extends React.Component<any> {
   render() {
@@ -7,7 +8,7 @@ export default class User extends React.Component<any> {
     return (
       <div>
         <NavBar />
-        <h1>User {userId}</h1>
+        <UserHeader username={userId} />
       </div>
     )
   }
