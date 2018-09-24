@@ -8,6 +8,7 @@ import UserSummary from './app/user-summary'
 import UserActivity from './app/user-activity'
 import UserMessages from './app/user-messages'
 import UserSettings from './app/user-settings'
+import Topic from './app/topic'
 
 export default class Routes extends React.Component {
   render() {
@@ -21,6 +22,7 @@ export default class Routes extends React.Component {
           <UserMessages path="messages" />
           <UserSettings path="settings" />
         </User>
+        <Topic path="/topics/:id" />
         <NotFound default />
       </Router>
     );
