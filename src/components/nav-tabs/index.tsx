@@ -46,9 +46,12 @@ const styles = (theme: Theme) =>
       borderRadius: 0,
       backgroundColor: '#fafafa',
       '&:hover': {
-        backgroundColor: '#eee',
+        backgroundColor: '#fafafa',
         color: '#40a9ff',
         opacity: 1,
+      },
+      '&:active': {
+        color: '#40a9ff',
       },
     },
     link: {

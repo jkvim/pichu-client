@@ -26,6 +26,10 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
+  logo: {
+    textDecoration: 'none',
+    color: 'white',
+  }
 }
 
 export interface NavBarState {
@@ -62,13 +66,16 @@ class NavBar extends React.Component<any, any> {
             >
               <MenuIcon />
             </IconButton>
-            <Typography
-              variant="title"
-              color="inherit"
-              className={classes.grow}
-            >
-              Pichu
-            </Typography>
+            <div className={classes.grow}>
+              <Link className={classes.logo} to="/">
+                <Typography
+                  variant="title"
+                  color="inherit"
+                >
+                  Pichu
+                </Typography>
+              </Link>
+            </div>
             <Button color="inherit">
               <Link to="/login">Login</Link>
             </Button>
@@ -95,8 +102,9 @@ class NavBar extends React.Component<any, any> {
                   open={open}
                   onClose={this.handleClose}
                 >
-                  <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                  <MenuItem onClick={this.handleClose}>My account</MenuItem>
+                  <Link to="/users/123">
+                    <MenuItem onClick={this.handleClose}>Profile</MenuItem>
+                  </Link>
                 </Menu>
               </div>
           </Toolbar>
