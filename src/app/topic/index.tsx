@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography'
 import NavBar from 'components/navbar'
 import PichuContent from 'components/pichu-content'
 import TopicSession from 'components/topic-article'
+import TopicFooter from 'components/topic-footer'
 
 import { Comment  } from 'types/'
 import mockData from './data'
@@ -12,6 +13,7 @@ import mockData from './data'
 const styles = (theme: Theme) => createStyles({
   container: {
     marginTop: 20,
+    marginBottom: 50,
   },
   category: {
     fontWeight: 'bold',
@@ -46,6 +48,7 @@ class Topic extends React.Component<any, any> {
           {comments.map((comment: Comment) => (
             <TopicSession content={content} author={author} createDate={createDate} key={comment.id} />
           ))}
+          <TopicFooter />
         </PichuContent>
       </div>
     )

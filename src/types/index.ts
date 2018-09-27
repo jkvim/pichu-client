@@ -11,3 +11,13 @@ export class Comment {
   likes: number;
   createDate: string;
 }
+
+export class Topic {
+  id: string;
+  title: string;
+  category: string;
+  author: Author;
+  commentCount: number;
+  visitCount: number;
+  lastActivity: string;
+}

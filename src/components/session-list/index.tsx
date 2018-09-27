@@ -39,9 +39,7 @@ class SessionList extends React.Component<any, any> {
 
   render() {
     const { classes } = this.props
-    const { rows, rowsPerPage, page } = this.state
-    const emptyRows =
-      rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage)
+    const { rows } = this.state
 
     return (
       <Paper className={classes.root}>
