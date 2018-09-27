@@ -30,6 +30,7 @@ export default {
   },
   comments: [
     {
+      id: "1",
       author: {
         id: '1',
         username: 'jkvim',
@@ -39,8 +40,9 @@ export default {
       createDate: '2018-10-01'
     },
     {
+      id: "2",
       author: {
-        id: '2',
+        id: '1',
         username: 'jkvim',
       },
       content: '感谢作者的分享,这篇文章非常适合已经对路由又过相应了解的半新手,谢谢!!!',
@@ -48,8 +50,9 @@ export default {
       createDate: '2018-10-01'
     },
     {
+      id: "3",
       author: {
-        id: '3',
+        id: '1',
         username: 'jkvim',
       },
       content: '感谢作者的分享,这篇文章非常适合已经对路由又过相应了解的半新手,谢谢!!!',
