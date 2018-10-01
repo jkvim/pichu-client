@@ -6,6 +6,7 @@ import NavBar from 'components/navbar'
 import PichuContent from 'components/pichu-content'
 import TopicSession from 'components/topic-article'
 import TopicFooter from 'components/topic-footer'
+import TopicEditor from 'components/topic-editor'
 
 import { Comment  } from 'types/'
 import mockData from './data'
@@ -48,6 +49,7 @@ class Topic extends React.Component<any, any> {
           {comments.map((comment: Comment) => (
             <TopicSession content={content} author={author} createDate={createDate} key={comment.id} />
           ))}
+          <TopicEditor />
           <TopicFooter />
         </PichuContent>
       </div>
