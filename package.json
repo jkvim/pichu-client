@@ -4,7 +4,7 @@
   "description": "## Target 1. I want to play with react or other framework as fast as posible",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production webpack-dev-server --config ./configs/webpack.config.js",
+    "start": "webpack-dev-server --config ./configs/webpack.config.js",
     "build": "webpack --config ./configs/webpack.config.js",
     "g": "plop"
   },
@@ -25,9 +25,15 @@
     "@types/classnames": "^2.2.6",
     "@types/react": "^16.4.11",
     "@types/react-dom": "^16.0.7",
+    "@types/slate-react": "^0.18.0",
     "classnames": "^2.2.6",
+    "emotion": "^9.2.12",
+    "file-loader": "^2.0.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-emotion": "^9.2.12",
+    "slate": "^0.41.2",
+    "slate-react": "^0.18.10",
     "webpack": "^4.16.5",
     "webpack-dev-server": "^3.1.5"
   },

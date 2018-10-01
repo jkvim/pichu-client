@@ -13,6 +13,7 @@ module.exports = {
     path: getPath('build'),
     filename: '[name].js',
     publicPath: '/',
+    pathinfo: false,
   },
   entry: getPath('./src/index.tsx'),
   resolve: {
@@ -26,7 +27,13 @@ module.exports = {
     rules: [
       {
         test: /\.tsx$/,
-        use: ['ts-loader'],
+        use: [{
+          loader: 'ts-loader',
+          options: {
+            transpileOnly: true,
+            experimentalWatchApi: true,
+          }
+        }],
         exclude: /node_modules/,
       },
     ],
