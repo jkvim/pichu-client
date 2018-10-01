@@ -9,7 +9,8 @@
     "allowJs": true,
     "baseUrl": "./src",
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "typeRoots": ["node_modules/@types", "./types/typings.d.ts"]
   },
   "include": [
     "src/**/*"
