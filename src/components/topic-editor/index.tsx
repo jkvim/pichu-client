@@ -1,13 +1,14 @@
 import * as React from 'react'
 import { createStyles, withStyles, Theme } from '@material-ui/core/styles'
+import Paper from '@material-ui/core/Paper'
 import { Editor } from 'slate-react'
 import { Value, Change } from 'slate'
-import mockValue from './mockValue'
 
 const styles = (theme: Theme) => createStyles({
-  editor: {
-    marginTop: 20,
-  }
+  root: {
+    padding: 20,
+    height: 300,
+  },
 })
 
 const DEFAULT_NODE = 'paragraph'
@@ -140,8 +141,9 @@ class TopicEditor extends React.Component<any, any> {
   }
 
   render() {
+    const { classes } = this.props
     return (
-      <div>
+      <Paper className={classes.root}>
         <Editor
           spellCheck
           autoFocus
@@ -151,7 +153,7 @@ class TopicEditor extends React.Component<any, any> {
           renderNode={this.renderNode}
           renderMark={this.renderMark}
         />
-      </div>
+      </Paper>
     )
   }
 }
