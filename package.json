@@ -22,24 +22,19 @@
     "@material-ui/core": "^3.1.0",
     "@material-ui/icons": "^3.0.1",
     "@reach/router": "^1.2.0",
-    "@types/classnames": "^2.2.6",
-    "@types/react": "^16.4.11",
-    "@types/react-dom": "^16.0.7",
-    "@types/slate-react": "^0.18.0",
     "classnames": "^2.2.6",
-    "emotion": "^9.2.12",
-    "file-loader": "^2.0.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-emotion": "^9.2.12",
     "slate": "^0.41.2",
-    "slate-react": "^0.18.10",
-    "webpack": "^4.16.5",
-    "webpack-dev-server": "^3.1.5"
+    "slate-react": "^0.18.10"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.116",
     "@types/reach__router": "^1.0.1",
+    "@types/classnames": "^2.2.6",
+    "@types/react": "^16.4.11",
+    "@types/react-dom": "^16.0.7",
+    "@types/slate-react": "^0.18.0",
     "awesome-typescript-loader": "^5.2.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
@@ -57,7 +52,9 @@
     "ts-loader": "^4.4.2",
     "tslint-config-prettier": "^1.15.0",
     "typescript": "^3.0.1",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.0",
+    "webpack": "^4.16.5",
+    "webpack-dev-server": "^3.1.5"
   },
   "husky": {
     "hooks": {

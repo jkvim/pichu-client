@@ -2,13 +2,12 @@ import * as React from 'react'
 import { createStyles, withStyles, Theme } from '@material-ui/core/styles'
 import { Editor } from 'slate-react'
 import { Value, Change } from 'slate'
-import Button from 'components/topic-editor-button'
-import Icon from 'components/topic-editor-icon'
-import Toolbar from 'components/topic-editor-menu'
 import mockValue from './mockValue'
 
 const styles = (theme: Theme) => createStyles({
-
+  editor: {
+    marginTop: 20,
+  }
 })
 
 const DEFAULT_NODE = 'paragraph'
@@ -27,38 +26,6 @@ class TopicEditor extends React.Component<any, any> {
   hasBlock = (type: string) => {
     const { value } = this.state
     return value.blocks.some((node: any) => node.type === type)
-  }
-
-  renderMarkButton = (type: string, icon: string) => {
-    const isActive = this.hasMark(type)
-    return (
-      <Button
-        active={isActive}
-        onMouseDown={(event: any) => this.onClickMark(event, type)}
-      >
-        <Icon>{icon}</Icon>
-      </Button>
-    )
-  }
-
-  renderBlockButton = (type: string, icon: string) => {
-    let isActive = this.hasBlock(type)
-
-    if (['numbered-list', 'bulleted-list'].includes(type)) {
-      const { value } = this.state
-      const firstBlock = value.blocks.first()
-      const parent = value.document.getParent(firstBlock && firstBlock.key)
-      isActive = this.hasBlock('list-item') && parent && parent.type === type
-    }
-
-    return (
-      <Button
-        active={isActive}
-        onMouseDown={(event: any) => this.onClickBlock(event, type)}
-      >
-        <Icon>{icon}</Icon>
-      </Button>
-    )
   }
 
   renderNode = (props: any) => {
@@ -154,17 +121,6 @@ class TopicEditor extends React.Component<any, any> {
   render() {
     return (
       <div>
-        <Toolbar>
-          {this.renderMarkButton('bold', 'format_bold')}
-          {this.renderMarkButton('italic', 'format_italic')}
-          {this.renderMarkButton('underlined', 'format_underlined')}
-          {this.renderMarkButton('code', 'code')}
-          {this.renderBlockButton('heading-one', 'looks_one')}
-          {this.renderBlockButton('heading-two', 'looks_two')}
-          {this.renderBlockButton('block-quote', 'format_quote')}
-          {this.renderBlockButton('numbered-list', 'format_list_numbered')}
-          {this.renderBlockButton('bulleted-list', 'format_list_bulleted')}
-        </Toolbar>
         <Editor
           spellCheck
           autoFocus
