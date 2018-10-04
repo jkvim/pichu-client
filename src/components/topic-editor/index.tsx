@@ -3,12 +3,19 @@ import { createStyles, withStyles, Theme } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import { Editor } from 'slate-react'
 import { Value, Change } from 'slate'
+import TopicEditorButton from 'components/topic-editor-button'
 
 const styles = (theme: Theme) => createStyles({
-  root: {
+  root: {},
+  toolbar: {
+    display: 'flex',
+    border: '1px solid #eee',
+    padding: 20,
+  },
+  editor: {
     padding: 20,
     height: 300,
-  },
+  }
 })
 
 const DEFAULT_NODE = 'paragraph'
@@ -140,10 +147,51 @@ class TopicEditor extends React.Component<any, any> {
     this.onChange(change)
   }
 
+  renderMarkButton = (type: string) => {
+    const isActive = this.hasMark(type)
+    return (
+      <TopicEditorButton
+        icon={type}
+        active={isActive}
+        onPress={(event: any) => this.onClickMark(event, type)}
+      />
+    )
+  }
+
+  renderBlockButton = (type: string) => {
+    let isActive = this.hasBlock(type)
+    const listTypes = ['numbered-list', 'bulleted-list']
+
+    if (listTypes.includes(type)) {
+      const { value } = this.state
+      const parent = value.document.getParent(value.blocks.first().key) as any
+      isActive = this.hasBlock('list-item') && parent && parent.type === type
+    }
+
+    return (
+      <TopicEditorButton
+        icon={type}
+        active={isActive}
+        onPress={(event: any) => this.onClickBlock(event, type)}
+      />
+    )
+  }
+
   render() {
     const { classes } = this.props
     return (
       <Paper className={classes.root}>
+        <div className={classes.toolbar}>
+          {this.renderMarkButton("bold")}
+          {this.renderMarkButton("italic")}
+          {this.renderMarkButton("underlined")}
+          {this.renderMarkButton("code")}
+          {this.renderBlockButton("heading-one")}
+          {this.renderBlockButton("heading-two")}
+          {this.renderBlockButton("block-quote")}
+          {this.renderBlockButton("numbered-list")}
+          {this.renderBlockButton("bulleted-list")}
+        </div>
         <Editor
           spellCheck
           autoFocus
@@ -152,6 +200,7 @@ class TopicEditor extends React.Component<any, any> {
           onChange={this.onChange}
           renderNode={this.renderNode}
           renderMark={this.renderMark}
+          className={classes.editor}
         />
       </Paper>
     )
