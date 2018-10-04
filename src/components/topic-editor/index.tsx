@@ -12,10 +12,31 @@ const styles = (theme: Theme) => createStyles({
 
 const DEFAULT_NODE = 'paragraph'
 
+const initialValue = Value.fromJSON({
+  document: {
+    nodes: [
+      {
+        object: 'block',
+        type: 'paragraph',
+        nodes: [
+          {
+            object: 'text',
+            leaves: [
+              {
+                text: '请发表你的意见...',
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+})
+
 
 class TopicEditor extends React.Component<any, any> {
   state = {
-    value: Value.fromJS(mockValue)
+    value: initialValue,
   }
 
   hasMark = (type: string) => {
