@@ -5,9 +5,9 @@ import Button from '@material-ui/core/Button'
 import Paper from '@material-ui/core/Paper'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import NavBar from 'components/navbar'
-import AccountIcon from '@material-ui/icons/AccountBoxOutlined'
-import LockIcon from '@material-ui/icons/LockOutlined'
-import EmailIcon from '@material-ui/icons/EmailOutlined'
+import AccountIcon from '@material-ui/icons/AccountBox'
+import LockIcon from '@material-ui/icons/Lock'
+import EmailIcon from '@material-ui/icons/Email'
 
 const styles = (theme: Theme) => createStyles({
   formWrapper: {

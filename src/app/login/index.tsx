@@ -3,6 +3,9 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import { withStyles, createStyles, Theme } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
+import InputAdornment from '@material-ui/core/InputAdornment'
+import AccountIcon from '@material-ui/icons/AccountBox'
+import LockIcon from '@material-ui/icons/Lock'
 import NavBar from 'components/navbar'
 
 const styles = (theme: Theme) => createStyles({
@@ -56,6 +59,13 @@ class Login extends React.Component<any> {
               value={this.state.name}
               onChange={this.handleChange('name')}
               className={classes.input}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <AccountIcon />
+                  </InputAdornment>
+                )
+              }}
             />
             <TextField
               id="password"
@@ -63,6 +73,13 @@ class Login extends React.Component<any> {
               value={this.state.password}
               onChange={this.handleChange('password')}
               className={classes.input}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <LockIcon />
+                  </InputAdornment>
+                )
+              }}
             />
             <Button color="primary" variant="contained" className={classes.button}>登录</Button>
           </form>
