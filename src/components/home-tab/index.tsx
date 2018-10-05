@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Tab from '@material-ui/core/Tab'
 import Tabs from '@material-ui/core/Tabs'
-import HomeTabs from 'constants/tabs'
+import HOME_TABS from 'constants/tabs'
 
 const styles = (theme: any) => ({
   root: {
@@ -64,12 +64,37 @@ class HomeTab extends React.Component<any, any> {
           <Tab
             disableRipple
             classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-            label={HomeTabs.LATEST}
+            label={HOME_TABS.LATEST}
           />
           <Tab
             disableRipple
             classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-            label={HomeTabs.HOT}
+            label={HOME_TABS.HOT}
+          />
+          <Tab
+            disableRipple
+            classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
+            label={HOME_TABS.ARTIFICIAL_INTELLIGENCE}
+          />
+          <Tab
+            disableRipple
+            classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
+            label={HOME_TABS.FRONTEND}
+          />
+          <Tab
+            disableRipple
+            classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
+            label={HOME_TABS.BACKEND}
+          />
+          <Tab
+            disableRipple
+            classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
+            label={HOME_TABS.CAREER}
+          />
+          <Tab
+            disableRipple
+            classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
+            label={HOME_TABS.IOT}
           />
         </Tabs>
       </div>
