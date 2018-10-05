@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./configs/webpack.config.js",
-    "build": "webpack --config ./configs/webpack.config.js",
+    "build": "NODE_ENV=production webpack --config ./configs/webpack.config.js",
     "g": "plop"
   },
   "repository": {
