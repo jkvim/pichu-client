@@ -84,7 +84,7 @@ class NavTabs extends React.Component<any, any> {
       <Link to={path} className={classnames(props.className, classes.link)}>
         <Button
           disableRipple
-          classes={{ contained: classes.button}}
+          classes={{ contained: classes.button }}
           onClick={props.onClick}
           variant="contained"
           children={props.children}
@@ -99,22 +99,20 @@ class NavTabs extends React.Component<any, any> {
     const { value } = this.state
 
     return (
-      <PichuContent className={classes.root}>
-        <Tabs
-          value={value}
-          onChange={this.handleChange}
-          classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}
-        >
-          {routes.map(({ label, path }: { label: string; path: string}) => (
-            <Tab
-              disableRipple
-              classes={{ root: classes.tab, selected: classes.tabSelected }}
-              label={label}
-              component={(props) => this.renderTab(props, path)}
-            />
-          ))}
-        </Tabs>
-      </PichuContent>
+      <Tabs
+        value={value}
+        onChange={this.handleChange}
+        classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}
+      >
+        {routes.map(({ label, path }: { label: string; path: string }) => (
+          <Tab
+            disableRipple
+            classes={{ root: classes.tab, selected: classes.tabSelected }}
+            label={label}
+            component={props => this.renderTab(props, path)}
+          />
+        ))}
+      </Tabs>
     )
   }
 }

@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles'
 import Tab from '@material-ui/core/Tab'
 import Tabs from '@material-ui/core/Tabs'
 import HOME_TABS from 'constants/tabs'
+import NavTabs from '../nav-tabs';
 
 const styles = (theme: any) => ({
   root: {
@@ -51,52 +52,22 @@ class HomeTab extends React.Component<any, any> {
     this.setState({ value });
   };
 
+  routes = [
+    { label: HOME_TABS.LATEST, path: 'latest' },
+    { label: HOME_TABS.HOT, path: 'hot' },
+    { label: HOME_TABS.ARTIFICIAL_INTELLIGENCE, path: 'artificial' },
+    { label: HOME_TABS.FRONTEND, path: 'frontend' },
+    { label: HOME_TABS.BACKEND, path: 'backend' },
+    { label: HOME_TABS.CAREER, path: 'career' },
+    { label: HOME_TABS.IOT, path: 'iot' },
+  ]
+
   render() {
-    const { classes } = this.props
-    const { value } = this.state
+    const { classes, children } = this.props
     return (
       <div className={classes.root}>
-        <Tabs
-          value={value}
-          onChange={this.handleChange}
-          classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}
-        >
-          <Tab
-            disableRipple
-            classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-            label={HOME_TABS.LATEST}
-          />
-          <Tab
-            disableRipple
-            classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-            label={HOME_TABS.HOT}
-          />
-          <Tab
-            disableRipple
-            classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-            label={HOME_TABS.ARTIFICIAL_INTELLIGENCE}
-          />
-          <Tab
-            disableRipple
-            classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-            label={HOME_TABS.FRONTEND}
-          />
-          <Tab
-            disableRipple
-            classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-            label={HOME_TABS.BACKEND}
-          />
-          <Tab
-            disableRipple
-            classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-            label={HOME_TABS.CAREER}
-          />
-          <Tab
-            disableRipple
-            classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-            label={HOME_TABS.IOT}
-          />
-        </Tabs>
+        <NavTabs routes={this.routes} />
+        {children}
       </div>
     )
   }
