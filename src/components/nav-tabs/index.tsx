@@ -6,7 +6,7 @@ import Tabs from '@material-ui/core/Tabs'
 import { Link } from '@reach/router'
 import Button from '@material-ui/core/Button'
 import PichuContent from 'components/pichu-content'
-import { Typography } from '@material-ui/core';
+import classnames from 'classnames'
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -15,12 +15,14 @@ const styles = (theme: Theme) =>
       backgroundColor: theme.palette.background.paper,
     },
     tabsRoot: {
+      backgroundColor: 'white',
       borderBottom: '1px solid #e8e8e8',
     },
     tabsIndicator: {
       backgroundColor: '#1890ff',
     },
-    tabRoot: {
+    tab: {
+      backgroundColor: 'white',
       minWidth: 72,
       fontWeight: theme.typography.fontWeightRegular,
       marginRight: theme.spacing.unit * 4,
@@ -44,19 +46,18 @@ const styles = (theme: Theme) =>
       margin: 0,
       boxShadow: 'none',
       borderRadius: 0,
-      backgroundColor: '#fafafa',
+      backgroundColor: 'white',
       '&:hover': {
-        backgroundColor: '#fafafa',
+        backgroundColor: 'white',
         color: '#40a9ff',
         opacity: 1,
       },
-      '&:active': {
-        color: '#40a9ff',
-      },
     },
     link: {
+      backgroundColor: 'white',
       textDecoration: 'none',
-    }
+      margin: 0,
+    },
   })
 
 class NavTabs extends React.Component<any, any> {
@@ -80,14 +81,16 @@ class NavTabs extends React.Component<any, any> {
   renderTab = (props: any, path: string) => {
     const { classes } = this.props
     return (
-        <Link to={path} className={classes.link}>
-          <Button
-            classes={{ contained: classes.button }}
-            onClick={props.onClick}
-            variant="contained"
-            children={props.children}
-          />
-        </Link>
+      <Link to={path} className={classnames(props.className, classes.link)}>
+        <Button
+          disableRipple
+          classes={{ contained: classes.button}}
+          onClick={props.onClick}
+          variant="contained"
+          children={props.children}
+          color="inherit"
+        />
+      </Link>
     )
   }
 
@@ -105,7 +108,7 @@ class NavTabs extends React.Component<any, any> {
           {routes.map(({ label, path }: { label: string; path: string}) => (
             <Tab
               disableRipple
-              classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
+              classes={{ root: classes.tab, selected: classes.tabSelected }}
               label={label}
               component={(props) => this.renderTab(props, path)}
             />
