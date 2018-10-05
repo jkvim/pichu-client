@@ -14,7 +14,6 @@ import InlineTable from 'components/inline-table'
 const styles = (theme: Theme) =>
   createStyles({
     root: {
-      border: '1px solid green',
       marginTop: 20,
     },
     container: {

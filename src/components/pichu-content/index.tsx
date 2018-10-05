@@ -10,7 +10,7 @@ const styles = {
     height: '100%',
     paddingLeft: PADDING,
     paddingRight: PADDING,
-    border: '1px solid blue',
+    // border: '1px solid blue',
   }
 }
 
