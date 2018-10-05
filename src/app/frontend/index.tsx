@@ -5,12 +5,12 @@ const styles = (theme: Theme) => createStyles({
 
 })
 
-class {{pascalCase name}} extends React.Component<any, any> {
+class Frontend extends React.Component<any, any> {
   render() {
     return (
-      <div>{{name}}</div>
+      <div>frontend</div>
     )
   }
 }
 
-export default withStyles(styles)({{pascalCase name}})
+export default withStyles(styles)(Frontend)

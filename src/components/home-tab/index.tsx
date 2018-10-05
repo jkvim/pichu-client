@@ -55,7 +55,7 @@ class HomeTab extends React.Component<any, any> {
   routes = [
     { label: HOME_TABS.LATEST, path: 'latest' },
     { label: HOME_TABS.HOT, path: 'hot' },
-    { label: HOME_TABS.ARTIFICIAL_INTELLIGENCE, path: 'artificial' },
+    { label: HOME_TABS.ARTIFICIAL_INTELLIGENCE, path: 'artificial-intelligence' },
     { label: HOME_TABS.FRONTEND, path: 'frontend' },
     { label: HOME_TABS.BACKEND, path: 'backend' },
     { label: HOME_TABS.CAREER, path: 'career' },

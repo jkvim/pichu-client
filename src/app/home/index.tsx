@@ -13,13 +13,13 @@ const styles = (theme: Theme) => createStyles({
 
 class Home extends React.Component<any> {
   render() {
-    const { classes } = this.props
+    const { classes, children } = this.props
     return (
       <div>
         <NavBar />
         <PichuContent classProps={classes.content}>
           <HomeTab />
-          <SessionList />
+          {children}
         </PichuContent>
       </div>
     )
