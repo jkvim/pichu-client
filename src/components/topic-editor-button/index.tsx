@@ -16,6 +16,8 @@ const styles = (theme: Theme) =>
     button: {
       pointer: 'cursor',
       marginRight: 20,
+      padding: 0,
+      border: 0,
     },
     active: {
       color: 'black',
@@ -42,7 +44,7 @@ class TopicEditorButton extends React.Component<any, any> {
     const { icon, active, classes, onPress } = this.props
     const Icon = iconsMap[icon]
     return (
-      <div
+      <button
         onMouseDown={onPress}
         className={classnames(
           active ? classes.active : classes.normal,
@@ -50,7 +52,7 @@ class TopicEditorButton extends React.Component<any, any> {
         )}
       >
         <Icon />
-      </div>
+      </button>
     )
   }
 }
