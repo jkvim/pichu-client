@@ -1,8 +1,9 @@
-import * as React from "react";
-import { Router } from "@reach/router";
-import Login from "./app/login";
-import NotFound from "./app/not-found";
-import Home from './app/home';
+import * as React from 'react'
+import { Router } from '@reach/router'
+import Login from './app/login'
+import Register from './app/register'
+import NotFound from './app/not-found'
+import Home from './app/home'
 import User from './app/user'
 import UserSummary from './app/user-summary'
 import UserActivity from './app/user-activity'
@@ -16,6 +17,7 @@ export default class Routes extends React.Component {
       <Router>
         <Home path="/" />
         <Login path="/login" />
+        <Register path="/register" />
         <User path="/users/:id">
           <UserSummary path="summary" />
           <UserActivity path="activity" />
@@ -25,6 +27,6 @@ export default class Routes extends React.Component {
         <Topic path="/topics/:id" />
         <NotFound default />
       </Router>
-    );
+    )
   }
 }

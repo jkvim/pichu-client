@@ -110,7 +110,10 @@ class NavBar extends React.Component<any, any> {
               </Link>
             </div>
             <Button color="inherit">
-              <Link to="/login">Login</Link>
+              <Link to="/login">登录</Link>
+            </Button>
+            <Button color="inherit">
+              <Link to="/register">注册</Link>
             </Button>
             <div>
               <IconButton
