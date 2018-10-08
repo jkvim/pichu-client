@@ -23,7 +23,7 @@ export default class Routes extends React.Component {
     return (
       <Router>
         <Home path="/">
-          <Latest path="/latest" />
+          <Latest path="/latest" default />
           <Hot path="/hot" />
           <Frontend path="/frontend" />
           <Backend path="backend" />
