@@ -34,7 +34,7 @@ export default class Routes extends React.Component {
         <Login path="/login" />
         <Register path="/register" />
         <User path="/users/:id">
-          <UserSummary path="summary" />
+          <UserSummary path="summary" default />
           <UserActivity path="activity" />
           <UserMessages path="messages" />
           <UserSettings path="settings" />
