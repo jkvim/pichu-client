@@ -7,6 +7,8 @@ import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import Paper from '@material-ui/core/Paper'
 import { Link } from '@reach/router'
+import { Query } from 'react-apollo'
+import gql from 'graphql-tag'
 import listData from './listData'
 
 const styles = (theme: any) => ({
@@ -21,6 +23,22 @@ const styles = (theme: any) => ({
     overflow: 'auto',
   },
 })
+
+const GET_LATEST_TOPICS = gql`
+  {
+    topics {
+      id
+      title
+      category
+      commentCount
+      visitCount
+      lastActivity
+      author {
+        username
+      }
+    }
+  }
+`
 
 class SessionList extends React.Component<any, any> {
   state = {
@@ -39,41 +57,46 @@ class SessionList extends React.Component<any, any> {
 
   render() {
     const { classes } = this.props
-    const { rows } = this.state
 
     return (
-      <Paper className={classes.root}>
-        <div className={classes.tableWrapper}>
-          <Table className={classes.table}>
-            <TableHead>
-              <TableRow>
-                <TableCell>标题</TableCell>
-                <TableCell>分类</TableCell>
-                <TableCell>作者</TableCell>
-                <TableCell>回复</TableCell>
-                <TableCell>浏览</TableCell>
-                <TableCell>活动</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows.map(row => {
-                return (
-                  <TableRow key={row.id}>
-                    <TableCell component="th" scope="row">
-                      <Link to={`/topics/${row.id}`}>{row.title}</Link>
-                    </TableCell>
-                    <TableCell>{row.category}</TableCell>
-                    <TableCell>{row.author.username}</TableCell>
-                    <TableCell>{row.commentCount}</TableCell>
-                    <TableCell>{row.visitCount}</TableCell>
-                    <TableCell>{row.lastActivity}</TableCell>
-                  </TableRow>
-                )
-              })}
-            </TableBody>
-          </Table>
-        </div>
-      </Paper>
+      <Query query={GET_LATEST_TOPICS}>
+        {({ loading, data: { topics } }) => {
+          return (
+            <Paper className={classes.root}>
+              <div className={classes.tableWrapper}>
+                <Table className={classes.table}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>标题</TableCell>
+                      <TableCell>分类</TableCell>
+                      <TableCell>作者</TableCell>
+                      <TableCell>回复</TableCell>
+                      <TableCell>浏览</TableCell>
+                      <TableCell>活动</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {topics ? topics.map((row: any) => {
+                      return (
+                        <TableRow key={row.id}>
+                          <TableCell component="th" scope="row">
+                            <Link to={`/topics/${row.id}`}>{row.title}</Link>
+                          </TableCell>
+                          <TableCell>{row.category}</TableCell>
+                          <TableCell>{row.author.username}</TableCell>
+                          <TableCell>{row.commentCount}</TableCell>
+                          <TableCell>{row.visitCount}</TableCell>
+                          <TableCell>{row.lastActivity}</TableCell>
+                        </TableRow>
+                      )
+                    }): null}
+                  </TableBody>
+                </Table>
+              </div>
+            </Paper>
+          )
+        }}
+      </Query>
     )
   }
 }

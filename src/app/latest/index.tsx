@@ -5,7 +5,6 @@ import SessionList from 'components/session-list'
 const styles = (theme: Theme) => createStyles({
 
 })
-
 class Latest extends React.Component<any, any> {
   render() {
     return (

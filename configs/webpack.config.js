@@ -21,7 +21,7 @@ module.exports = {
       components: getPath('src/components/'),
       constants: getPath('src/constants/')
     },
-    extensions: ['.ts', '.tsx', '.js', '.json'],
+    extensions: ['.ts', '.tsx', '.js', '.json', 'mjs'],
   },
   module: {
     rules: [
@@ -36,6 +36,11 @@ module.exports = {
         }],
         exclude: /node_modules/,
       },
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: "javascript/auto",
+      }
     ],
   },
   plugins: [
