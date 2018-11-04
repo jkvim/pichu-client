@@ -10,7 +10,9 @@
     "baseUrl": "./src",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "lib": ["es7", "dom"]
+    "lib": ["es7", "dom"],
+    "strict": true,
+    "strictFunctionTypes": false
   },
   "include": [
     "src/**/*"

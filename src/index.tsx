@@ -10,7 +10,7 @@ const client = new ApolloClient({
 })
 
 class App extends React.Component {
-  render() {
+    public render() {
     return (
       <ApolloProvider client={client}>
         <CSSBaseline />
