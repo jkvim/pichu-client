@@ -19,6 +19,7 @@
     "import-name": false,
     "ordered-imports": false,
     "member-ordering": false,
+    "member-access": [true, "no-public"],
     "ban-types": false,
     "no-string-literal": false,
     "object-literal-sort-keys": false,
