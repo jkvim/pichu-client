@@ -1,5 +1,6 @@
 const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
 const NODE_ENV = process.env.NODE_ENV
 const ROOT_PATH = path.join(__dirname, '..')
@@ -47,6 +48,7 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: getPath('./index.html'),
     }),
+    new ForkTsCheckerWebpackPlugin(),
   ],
   // for skip warning
   performance: {
