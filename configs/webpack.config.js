@@ -9,7 +9,7 @@ const getPath = (filePath) => path.resolve(ROOT_PATH, filePath)
 
 module.exports = {
   mode: NODE_ENV === 'production' ? 'production' : 'development',
-  // devtool: 'inline-source-map',
+  devtool: 'inline-source-map',
   output: {
     path: getPath('build'),
     filename: '[name].js',
