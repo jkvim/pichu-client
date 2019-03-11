@@ -51,7 +51,8 @@
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.11.0",
     "html-webpack-plugin": "^3.2.0",
-    "husky": "^1.0.0-rc.13",
+    "husky": ">=1",
+    "lint-staged": ">=8",
     "plop": "^2.1.0",
     "prettier": "^1.14.2",
     "source-map-loader": "^0.2.4",
@@ -68,8 +69,15 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "./scripts/pre-commit.sh",
+      "pre-commit": "lint-staged",
       "commit-msg": "./scripts/commit-msg.sh $HUSKY_GIT_PARAMS"
     }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint",
+      "prettier --write",
+      "git add"
+    ]
   }
 }
