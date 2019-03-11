@@ -77,6 +77,10 @@ class NavBar extends React.Component<any, any> {
     })
   }
 
+  renderLoginButton = () => <Link to="/login" />
+
+  renderRegisterButton = () => <Link to="/register" />
+
   categoryList = (
     <List>
       {values(Categorys).map(category => (
@@ -107,14 +111,14 @@ class NavBar extends React.Component<any, any> {
                 </Typography>
               </Link>
             </div>
-            <Button component={props => <Link to="/login" {...props} />} className={classes.button}>
+            <Button component={this.renderLoginButton} className={classes.button}>
               登录
             </Button>
-            <Button component={props => <Link to="/register" {...props} />} className={classes.button}>
+            <Button component={this.renderRegisterButton} className={classes.button}>
               注册
             </Button>
             <div>
-              <IconButton aria-owns={open ? 'menu-appbar' : null} aria-haspopup="true" onClick={this.handleMenu} color="inherit">
+              <IconButton aria-owns={open ? 'menu-appbar' : ''} aria-haspopup="true" onClick={this.handleMenu} color="inherit">
                 <AccountCircle />
               </IconButton>
               <Menu id="menu-appbar" anchorEl={anchorEl} anchorOrigin={{ vertical: 'top', horizontal: 'right' }} transformOrigin={{ vertical: 'top', horizontal: 'right' }} open={open} onClose={this.handleClose}>
